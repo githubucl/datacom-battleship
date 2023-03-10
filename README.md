@@ -3,7 +3,18 @@
 ### Design Doc
 
 shipType: {
+type: string;
+size: number;
+count: number;
+positions: number[][];
+life: number;
+}
 
+boxType: {
+hasShip: boolean;
+position: number[];
+hitState: boolean;
+clicked: boolean;
 }
 
 ### 1 Introduction
