@@ -1,0 +1,23 @@
+.Header {
+  background-color: #9494ff;
+  &__input {
+    margin-right: 8px;
+  }
+  &__button {
+    &-1 {
+      width: 100px;
+      background-color: #4a4a4a;
+      margin-right: 8px;
+    }
+    &-2 {
+      width: 120px;
+      background-color: #7576b7;
+      margin-right: 8px;
+    }
+    &-3 {
+      width: 50px;
+      margin-right: 8px;
+      background-color: #4a4a4a;
+    }
+  }
+}
