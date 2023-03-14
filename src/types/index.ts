@@ -23,6 +23,6 @@ export type TGrid = SHIPTYPE | "none";
 
 export type TGridInfo = {
   ship: TGrid;
-  position: number[];
+  position: string;
   fired: boolean;
 };

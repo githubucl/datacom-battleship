@@ -62,9 +62,9 @@ export const initialGameBoardState = (
         }
       );
       if (match) {
-        result.push({ ship: match.ship, position: [i, j], fired: false });
+        result.push({ ship: match.ship, position: `${i}${j}`, fired: false });
       } else {
-        result.push({ ship: "none", position: [i, j], fired: false });
+        result.push({ ship: "none", position: `${i}${j}`, fired: false });
       }
     }
   }
