@@ -7,7 +7,7 @@ type: string;
 size: number;
 count: number;
 positions: number[][];
-life: number;
+health: number;
 }
 
 boxType: {

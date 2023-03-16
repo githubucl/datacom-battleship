@@ -22,7 +22,7 @@ const GameBoard = () => {
     });
   };
   return (
-    <div className="GameBoard ">
+    <div className="GameBoard d-flex flex-wrap">
       {boardState.map(({ position, ship, fired }) => (
         <Grid
           key={position}

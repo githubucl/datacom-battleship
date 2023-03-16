@@ -5,9 +5,15 @@ import GamePanel from "./GamePanel";
 import "./Game.scss";
 const Game = (): JSX.Element => {
   return (
-    <div className="p-sm-5 d-flex flex-column flex-sm-row-reverse justify-content-center align-items-center">
-      <GameBoard />
-      <GamePanel />
+    <div className="p-sm-5 container ">
+      <div className="row">
+        <div className="col-sm-8 col-12 order-sm-2">
+          <GameBoard />
+        </div>
+        <div className="col-sm-4 col-12 ">
+          <GamePanel />
+        </div>
+      </div>
     </div>
   );
 };
