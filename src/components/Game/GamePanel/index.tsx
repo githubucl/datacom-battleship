@@ -5,8 +5,12 @@ import "./GamePanel.scss";
 const GamePanel = () => {
   return (
     <div className="GamePanel">
-      <ScoreBoard />
-      <ShipHealth />
+      <div className="">
+        <ScoreBoard />
+      </div>
+      <div className="">
+        <ShipHealth />
+      </div>
     </div>
   );
 };

@@ -19,6 +19,21 @@ export type TShipLayout = {
   positions: number[][];
 };
 
+export type TShipInfo = {
+  size: number;
+  count: number;
+};
+
+export type TShipTypes = {
+  [key in SHIPTYPE]: TShipInfo;
+};
+
+export type TShipWithHealth = {
+  ship: SHIPTYPE;
+  health: number;
+  damage: number;
+};
+
 export type TGrid = SHIPTYPE | "none";
 
 export type TGridInfo = {
