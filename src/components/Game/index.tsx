@@ -17,22 +17,32 @@ const Game = (): JSX.Element => {
   const [shipHealthState, setShipHealthState] = useState(
     initialShipHealthState(shipTypes)
   );
-  console.log("shipHealthState", shipHealthState);
+
   const onGridClick = (clickedPosition: string) => {
     setBoardState((boardState) => {
       return boardState.map((gridState) => {
+        //When user clicks on a grid we want to do 2 things
         if (gridState.position === clickedPosition) {
+          //First imcrement damage for that particular ship on the grid (if there is one)
+          setShipHealthState((shipHealthPrev) => {
+            return shipHealthPrev.map((shipHealth) => {
+              if (shipHealth.ship === gridState.ship) {
+                return { ...shipHealth, damage: shipHealth.damage + 1 };
+              }
+              return shipHealth;
+            });
+          });
+          //Second set fired state to true for that grid
           return {
             ...gridState,
             fired: true,
           };
-          //TODO:minus 1 live for that ship
         }
         return gridState;
       });
     });
   };
-  console.log("boardState", boardState);
+
   return (
     <div className="p-sm-5 container ">
       <div className="row">
@@ -40,7 +50,7 @@ const Game = (): JSX.Element => {
           <GameBoard onGridClick={onGridClick} boardState={boardState} />
         </div>
         <div className="col-sm-4 col-12 ">
-          <GamePanel />
+          <GamePanel shipHealthState={shipHealthState} />
         </div>
       </div>
     </div>

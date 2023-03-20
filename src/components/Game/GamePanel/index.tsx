@@ -1,8 +1,13 @@
 import React from "react";
 import ScoreBoard from "./ScoreBoard";
 import ShipHealth from "./ShipHealth";
+import { TShipWithHealth } from "../../../types";
 import "./GamePanel.scss";
-const GamePanel = () => {
+
+type TGamePanelProp = {
+  shipHealthState: TShipWithHealth[];
+};
+const GamePanel = ({ shipHealthState }: TGamePanelProp): JSX.Element => {
   return (
     <div className="GamePanel">
       <div className="">
