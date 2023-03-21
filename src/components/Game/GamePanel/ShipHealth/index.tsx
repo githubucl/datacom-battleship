@@ -1,6 +1,6 @@
 import React from "react";
 import Ship from "./Ship";
-import "./ShipHealth.scss";
+
 import { TShipWithHealth } from "../../../../types";
 type TShipHealth = {
   shipsHealthState: TShipWithHealth[];

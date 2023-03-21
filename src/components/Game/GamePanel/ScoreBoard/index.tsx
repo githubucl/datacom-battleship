@@ -1,6 +1,6 @@
 import React from "react";
 import ScoreCard from "./ScoreCard";
-import "./ScoreBoard.scss";
+
 const ScoreBoard = () => {
   return (
     <div className="d-flex">
