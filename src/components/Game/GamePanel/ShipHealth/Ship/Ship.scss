@@ -1,0 +1,11 @@
+.Ship {
+  max-height: 30px;
+
+  &__indicator {
+    max-width: 15px;
+    max-height: 15px;
+  }
+  &__sideImage {
+    width: 100%;
+  }
+}

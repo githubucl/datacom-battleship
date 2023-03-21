@@ -82,7 +82,7 @@ export const initialGameBoardState = (
   return result;
 };
 
-export const initialShipHealthState = (
+export const initialShipsHealthState = (
   shipsInfo: TShipTypes
 ): TShipWithHealth[] => {
   return Object.entries(shipsInfo).map(([key, value]) => {

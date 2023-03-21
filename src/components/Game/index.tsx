@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   initialGameBoardState,
   shipLayout,
-  initialShipHealthState,
+  initialShipsHealthState,
   shipTypes,
 } from "./GameHelper";
 import GameBoard from "./GameBoard";
@@ -14,8 +14,8 @@ const Game = (): JSX.Element => {
     initialGameBoardState(shipLayout, 10)
   );
 
-  const [shipHealthState, setShipHealthState] = useState(
-    initialShipHealthState(shipTypes)
+  const [shipsHealthState, setShipsHealthState] = useState(
+    initialShipsHealthState(shipTypes)
   );
 
   const onGridClick = (clickedPosition: string) => {
@@ -24,7 +24,7 @@ const Game = (): JSX.Element => {
         //When user clicks on a grid we want to do 2 things
         if (gridState.position === clickedPosition) {
           //First imcrement damage for that particular ship on the grid (if there is one)
-          setShipHealthState((shipHealthPrev) => {
+          setShipsHealthState((shipHealthPrev) => {
             return shipHealthPrev.map((shipHealth) => {
               if (shipHealth.ship === gridState.ship) {
                 return { ...shipHealth, damage: shipHealth.damage + 1 };
@@ -44,13 +44,13 @@ const Game = (): JSX.Element => {
   };
 
   return (
-    <div className="p-sm-5 container ">
+    <div className="p-sm-5 container">
       <div className="row">
-        <div className="col-sm-8 col-12 order-sm-2">
+        <div className="col-md-8 col-12 order-md-2">
           <GameBoard onGridClick={onGridClick} boardState={boardState} />
         </div>
-        <div className="col-sm-4 col-12 ">
-          <GamePanel shipHealthState={shipHealthState} />
+        <div className="col-md-4 col-12 ">
+          <GamePanel shipsHealthState={shipsHealthState} />
         </div>
       </div>
     </div>

@@ -1,11 +1,18 @@
 import React from "react";
 import Ship from "./Ship";
-import { SHIPTYPE } from "../../../../types";
-
-const ShipHealth = () => {
+import "./ShipHealth.scss";
+import { TShipWithHealth } from "../../../../types";
+type TShipHealth = {
+  shipsHealthState: TShipWithHealth[];
+};
+const ShipHealth = ({ shipsHealthState }: TShipHealth) => {
   return (
-    <div className="d-flex ">
-      <Ship shipType={SHIPTYPE.BATTBLESHIP} health={3} />
+    <div className="ShipHealth row flex-grow-1 ">
+      <div className="row row-cols-1 d-flex flex-wrap align-content-around">
+        {shipsHealthState.map(({ ship, health, damage }) => {
+          return <Ship ship={ship} health={health} damage={damage} />;
+        })}
+      </div>
     </div>
   );
 };
